@@ -17,7 +17,7 @@ export default function VerifierPage() {
   useEffect(() => {
     const fetchApplications = async () => {
       try {
-        const response = await fetch('http://localhost:5000/applications/');
+        const response = await fetch('https://creditsea-backend-78oc.onrender.com/applications/');
         const data = await response.json();
         setApplications(data);
       } catch (error) {
@@ -34,7 +34,7 @@ export default function VerifierPage() {
     const action = currentStatus === 'pending' ? 'verify' : 'reject';
 
     try {
-      const response = await fetch(`http://localhost:5000/applications/${id}/verify`, {
+      const response = await fetch(`https://creditsea-backend-78oc.onrender.com/${id}/verify`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

@@ -32,7 +32,7 @@ export default function AdminPage() {
   useEffect(() => {
     const fetchApplications = async () => {
       try {
-        const response = await fetch('http://localhost:5000/applications/');
+        const response = await fetch('https://creditsea-backend-78oc.onrender.com/applications/');
         const data = await response.json();
         setApplications(data);
       } catch (error) {
@@ -48,7 +48,7 @@ export default function AdminPage() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('http://localhost:5000/users/');
+        const response = await fetch('https://creditsea-backend-78oc.onrender.com/users/');
         const data = await response.json();
         setUsers(data);
       } catch (error) {
@@ -65,7 +65,7 @@ export default function AdminPage() {
     const action = currentStatus === 'verified' ? 'approve' : 'pending';
 
     try {
-      const response = await fetch(`http://localhost:5000/applications/${id}/approve`, {
+      const response = await fetch(`https://creditsea-backend-78oc.onrender.com/applications/${id}/approve`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -94,7 +94,7 @@ export default function AdminPage() {
 
   const deleteAdmin = async (id: string) => {
     try {
-        const response = await fetch(`http://localhost:5000/users/${id}`, {
+        const response = await fetch(`https://creditsea-backend-78oc.onrender.com/users/${id}`, {
             method: 'DELETE',
             headers: {
               'Content-Type': 'application/json',
